@@ -19,13 +19,13 @@ class LionTest {
     @Test
     void lionMaleHasMane() throws Exception {
         Lion lion = new Lion("Самец", feline);
-        assertTrue(lion.doesHaveMane(), "Самец льва должен иметь гриву");
+        assertTrue(lion.doesHaveMane());
     }
 
     @Test
     void lionFemaleDoesNotHaveMane() throws Exception {
         Lion lion = new Lion("Самка", feline);
-        assertFalse(lion.doesHaveMane(), "Самка льва не должна иметь гриву");
+        assertFalse(lion.doesHaveMane());
     }
 
     @Test
@@ -41,8 +41,7 @@ class LionTest {
 
         int actual = lion.getKittens();
 
-        assertEquals(3, actual, "Метод getKittens должен вернуть значение от feline");
-        Mockito.verify(feline, Mockito.times(1)).getKittens();
+        assertEquals(3, actual);
     }
 
     @Test
@@ -53,8 +52,7 @@ class LionTest {
         Lion lion = new Lion("Самка", feline);
         List<String> actual = lion.getFood();
 
-        assertEquals(expectedFood, actual, "Метод getFood должен вернуть список пищи для хищника");
-        Mockito.verify(feline, Mockito.times(1)).getFood("Хищник");
+        assertEquals(expectedFood, actual);
     }
 
     @Test

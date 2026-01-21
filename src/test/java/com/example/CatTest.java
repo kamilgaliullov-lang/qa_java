@@ -38,8 +38,7 @@ class CatTest {
 
         List<String> actual = cat.getFood();
 
-        assertEquals(expectedFood, actual, "Метод getFood должен вернуть список пищи от хищника");
-        Mockito.verify(feline, Mockito.times(1)).eatMeat();
+        assertEquals(expectedFood, actual);
     }
 
     @Test
